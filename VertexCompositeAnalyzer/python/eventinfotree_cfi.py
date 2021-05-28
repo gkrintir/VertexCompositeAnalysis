@@ -21,6 +21,8 @@ eventinfoana = cms.EDAnalyzer('EventInfoTreeProducer',
       'HLT_HIL3Mu3_NHitQ10_v1', # Low pT muons
       # ZeroBias trigger
       'HLT_HIZeroBias_v',
+      # Empty BX trigger
+      'HLT_HIL1NotBptxOR_v',
       # Minimum Bias trigger
       'HLT_HIMinimumBias_v',
   ),

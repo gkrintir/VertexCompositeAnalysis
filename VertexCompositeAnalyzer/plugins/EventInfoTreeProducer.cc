@@ -84,6 +84,7 @@ private:
   uint  runNb;
   uint  eventNb;
   uint  lsNb;
+  uint  bxNb;
   short trigPrescale[MAXTRG];
   short centrality;
   int   Ntrkoffline;
@@ -213,6 +214,7 @@ EventInfoTreeProducer::fillRECO(const edm::Event& iEvent, const edm::EventSetup&
   runNb = iEvent.id().run();
   eventNb = iEvent.id().event();
   lsNb = iEvent.luminosityBlock();
+  bxNb = iEvent.bunchCrossing();
 
   //Trigger Information
   edm::Handle<edm::TriggerResults> triggerResults;
@@ -350,6 +352,7 @@ EventInfoTreeProducer::initTree()
   EventInfoNtuple->Branch("RunNb",&runNb,"RunNb/i");
   EventInfoNtuple->Branch("LSNb",&lsNb,"LSNb/i");
   EventInfoNtuple->Branch("EventNb",&eventNb,"EventNb/i");
+  EventInfoNtuple->Branch("BXNb",&bxNb,"BXNb/i");
   EventInfoNtuple->Branch("nPV",&nPV,"nPV/S");
   EventInfoNtuple->Branch("bestvtxX",&bestvx,"bestvtxX/F");
   EventInfoNtuple->Branch("bestvtxY",&bestvy,"bestvtxY/F");
